@@ -1,5 +1,5 @@
 // Offline support: pages from the network when possible, app files from cache.
-const CACHE = "dm-v2";
+const CACHE = "dm-v3";
 self.addEventListener("install", (e) => self.skipWaiting());
 self.addEventListener("activate", (e) => e.waitUntil(
   caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())
